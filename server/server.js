@@ -12,6 +12,5 @@ app.get('/api/users', getAllUsers);
 app.get('/api/users/:id', getUserById);
 // get hints by student ID
 app.get('/api/users/students/:studentID', getHintsByStudentId);
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, () => {console.log(`Server is running on http://localhost:${port}`);
 })
