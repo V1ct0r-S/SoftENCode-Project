@@ -7,25 +7,29 @@
             background-size: cover;
             font-family: "kanit", sans-serif;
             background-repeat: no-repeat;
-            background-color: black;
+            background-color: black;    
+            position: relative;
+            background-size:100% 100vh;
+}
 
-        }
+        
         .container {
             text-align: center;
             margin: 0;
             position: absolute;
-            top: 50%;
+            top: 50vh;
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 30px;
-            padding: 50px;
-            height: 700px;
+            border-radius: 3vw;
+            padding: 2vw;
+            height: 40vw;
+
         }
         .header {
-            font-size: 40px;
+            font-size: 2vw;
             color: rgb(245, 210, 253);
-            padding: 20px;
+            padding: 2vw;
             text-align: center;
         }
         .idInput {
@@ -34,12 +38,12 @@
         #idInput {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
-            border-radius: 20px;
+            margin-bottom: 0.6vw;
+            border-radius: 1vw;
             background-color: rgba(0, 0, 0, 0.2);
             border-color: rgb(245, 210, 253);
             text-align: center;
-            font-size: 24px;
+            font-size: 1.3vw;
             font-family: "kanit", sans-serif;
             color: rgb(245, 210, 253);
             flex: 1;
@@ -48,39 +52,97 @@
             background-color: rgb(245, 210, 253);
             color: black;
             border: none;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
+            margin-left: 1vw;
+            margin-bottom: 1vw;
+            padding: 0.7vw 0.7vw;
+            font-size: 1.2vw;
             font-family: "kanit", sans-serif;
-            border-radius: 15px;
+            border-radius: 1vw;
             cursor: pointer;
             flex: 1;
         }
         #hint, #timer, #See_u{
-            margin-top: 10px;
-            margin-left: 10px;
-            font-size: 24px;
-            color: rgb(255, 255, 255);
-            padding: 20px;
+            margin-top: 0.8vw;
+            margin-left: 1.7vw;
+            font-size: 1.3vw;
+            color: rgb(245, 210, 253);
+            padding: 1vw;
             text-align: center;
-            width: 500px
+            width: 25vw
 
         }
         #plain {
           font-family: Arial, Helvetica, sans-serif;
         }
         
+@media screen and (max-width: 1024px) {
+            .container {
+                height: 60vw;
+            }
+            .header {
+                font-size: 2.5vw;
+            }
+            #idInput, #button {
+                font-size: 1.7vw;
+            }
+            #hint, #timer, #See_u {
+                width: 80%;
+                margin-left: 4vw;
+                font-size: 1.7vw;
+            }
+        }
+
+        
 @media screen and (max-width: 768px) {
-  .flex {
-    flex-direction: column;
-  }
+            .container {
+                height: 80vw;
+                width: 60vw
+            }
+            .header {
+                font-size: 3vw;
+            }
+            #idInput, #button {
+                font-size: 2vw;
+            }
+            #hint, #timer, #See_u {
+                width: 80%;
+                margin-left: 4vw;
+                font-size: 2.5vw;
+            }
+        }
 
-  .header {
-    font-size: 24px;
-  }
+@media screen and (max-width: 426px) {
+            .container {
+                height: 120vw;
+                width: 80vw
+            }
+            .header {
+                font-size: 4.3vw;
+            }
+            #idInput, #button {
+                font-size: 3.1vw;
+            }
+            #hint, #timer, #See_u {
+                width: 80%;
+                margin-left: 4vw;
+                font-size: 3.8vw;
+            }
+        }
 
-  .button {
-    width: 100%;
-  }
-}
+@media screen and (max-width: 321px) {
+            .container {
+                height: 150vw;
+                width: 85vw
+            }
+            .header {
+                font-size: 5vw;
+            }
+            #idInput, #button {
+                font-size: 3.3vw;
+            }
+            #hint, #timer, #See_u {
+                width: 80%;
+                margin-left: 4vw;
+                font-size: 4vw;
+            }
+        }
