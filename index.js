@@ -5,32 +5,34 @@ const week4 = new Date("Aug 16, 2025 9:30:00").getTime();
 const weeks = [week1, week2, week3, week4];
 var currentWeek = 0
 
-
-const validateID = async () => {
-    let studentIDDOM = document.getElementById("idInput").value; 
-    console.log(currentWeek)
+function validateID() {
+    let studentIDDOM = document.getElementById("idInput").value.trim(); 
     try {
-        const response = await axios.get(`http://localhost:8000/api/users/students/${studentIDDOM}`);
-        
-        if (currentWeek == 0) {
-            document.getElementById("hint").innerText = "Be patient, the hints will be available soon!";
+        const user =  searchID(studentIDDOM)
+        if (user == undefined) {
+            document.getElementById("hint").innerText = "ID not found :("
+            }
+        else {
+            if (currentWeek == 0) {
+                document.getElementById("hint").innerText = "Be patient, the hints will be available soon!";
+            }
+            else if (currentWeek == 1) {
+                const hint = user.week1
+                document.getElementById("hint").innerText = "1st hint : " + hint;
+            }
+            else if (currentWeek == 2) {
+                const hint = user.week2
+                document.getElementById("hint").innerText = "2nd hint: " + hint;
+            }
+            else if (currentWeek == 3) {
+                const hint = user.week3
+                document.getElementById("hint").innerText = "Final hint : " + hint;
+                document.getElementById("See_u").innerText = "Good luck and see you at First-Meet TUPINE!!"
+            }
+            else if (currentWeek > 3) {
+                document.getElementById("hint").innerText = "First-Meet TUPINE welcome you!";
+                document.getElementById("See_u").innerText = "@301 Engineering Building, 12:30 PM";
         }
-        else if (currentWeek == 1) {
-            const hint = response.data.week1
-            document.getElementById("hint").innerText = "1st hint : " + hint;
-        }
-        else if (currentWeek == 2) {
-            const hint = response.data.week2
-            document.getElementById("hint").innerText = "2nd hint: " + hint;
-        }
-        else if (currentWeek == 3) {
-            const hint = response.data.week3
-            document.getElementById("hint").innerText = "Final hint : " + hint;
-            document.getElementById("See_u").innerText = "Good luck and see you at First-Meet TUPINE!!"
-        }
-        else if (currentWeek > 3) {
-            document.getElementById("hint").innerText = "First-Meet TUPINE welcome you!";
-            document.getElementById("See_u").innerText = "@301 Engineering Building, 12:30 PM";
         }
         
     }
@@ -38,6 +40,16 @@ const validateID = async () => {
         document.getElementById("hint").innerText = "An error occurred! :(";
         return;
     }
+}
+
+function searchID(stdID) {
+    for (let i = 0; i < userData.length;i++) {
+        user = userData[i]
+        if (stdID == user.studentID){
+            return user
+        }
+    }
+    return undefined
 }
 
 function getWeek() {

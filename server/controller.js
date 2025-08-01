@@ -1,4 +1,4 @@
-import userData from './userData.js';
+import userData from '../userData.js';
 
 export const getAllUsers = (req, res) => {
     res.json(userData);
