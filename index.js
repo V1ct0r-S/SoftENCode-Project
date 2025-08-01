@@ -4,7 +4,7 @@ const week3 = new Date("Aug 14, 2025 12:00:00").getTime();
 const week4 = new Date("Aug 16, 2025 9:30:00").getTime();
 const weeks = [week1, week2, week3, week4];
 var currentWeek = 0
-var beta = true
+var beta = false
 
 function validateID() {
     let studentIDDOM = document.getElementById("idInput").value.trim(); 
@@ -70,32 +70,28 @@ function getWeek() {
     }
 }
 
-if (beta = fasle) {
-
-    var x = setInterval(function() {
+var x = setInterval(function() {
         
-    index = getWeek();
-    countDownDate = weeks[index];
-    // Get today's date and time
-    var now = new Date().getTime();
+index = getWeek();
+countDownDate = weeks[index];
+// Get today's date and time
+var now = new Date().getTime();
 
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Find the distance between now and the count down date
+var distance = countDownDate - now;
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (currentWeek == 3) {
-        document.getElementById("timer").innerHTML = "First-Meet TUPINE: " + days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    }
-    else {
-        document.getElementById("timer").innerHTML = "Next hint: " + days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-    }
-
-    }, 1000);
-
+if (currentWeek == 3) {
+    document.getElementById("timer").innerHTML = "First-Meet TUPINE: " + days + "d " + hours + "h "
++ minutes + "m " + seconds + "s ";
 }
+else {
+    document.getElementById("timer").innerHTML = "Next hint: " + days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+}
+}, 1000);
+
