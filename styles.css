@@ -2,6 +2,7 @@
             font-family: "kanit";
             src: url("./Kanit/pixellet.ttf");
         }
+       
         body {
             background-image: url("./Background/640971-rog-wallpaper-design-pixel-jeff.gif");
             background-size: cover;
