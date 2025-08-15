@@ -35,10 +35,7 @@ function validateID() {
                 document.getElementById("hint").innerText = "Final hint : " + hint;
                 document.getElementById("See_u").innerText = "Good luck and see you at First-Meet TUPINE!!"
             }
-            else if (currentWeek > 3) {
-                document.getElementById("hint").innerText = "First-Meet TUPINE welcome you!";
-                document.getElementById("See_u").innerText = "@301 Engineering Building, 12:30 PM";
-        }
+            
         }
         
     }
@@ -88,6 +85,12 @@ var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 if (currentWeek == 3) {
     document.getElementById("timer").innerHTML = "First-Meet TUPINE: " + days + "d " + hours + "h "
 + minutes + "m " + seconds + "s ";
+}
+else if (currentWeek > 3) {
+    
+    document.getElementById("timer").innerHTML = "Welcome SoftEN12 to";
+    document.getElementById("hint").innerText = "First-Meet TUPINE!";
+    document.getElementById("See_u").innerText = "@301 Engineering Building, 12:30 PM";
 }
 else {
     document.getElementById("timer").innerHTML = "Next hint: " + days + "d " + hours + "h "
